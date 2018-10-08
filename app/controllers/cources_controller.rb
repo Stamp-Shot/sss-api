@@ -3,7 +3,7 @@ class CourcesController < ApplicationController
   def index
     @cources = Cource.all
 
-    render json: @cources
+    render 'index', formats: 'json', handlers: 'jbuilder'
   end
 
   # GET /cources/:name
@@ -12,7 +12,15 @@ class CourcesController < ApplicationController
     #@cource = Cource.find_by(name: params[:name])
     @cource = Cource.find(params[:id])
     
-    render 'spot', formats: 'json', handlers: 'jbuilder'
+    render 'show', formats: 'json', handlers: 'jbuilder'
+  end
+
+  def search
+    @cource = Cource.where name: params[:name]
+    #@cource = Cource.find_by(name: params[:name])
+    #@cource = Cource.find(params[:id])
+    
+    render 'search', formats: 'json', handlers: 'jbuilder'
   end
 
   # POST /cources

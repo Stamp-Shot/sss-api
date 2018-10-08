@@ -1,0 +1,1 @@
+json.array! @cources, :name,:spot_num
