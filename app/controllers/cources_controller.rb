@@ -8,7 +8,7 @@ class CourcesController < ApplicationController
 
   # GET /cources/:name
   def show
-    #@cource = Cource.joins(:spot).where(spot: params[:id])
+    #@cource = Cource.joins(:spot).where(name: params[:name])
     #@cource = Cource.find_by(name: params[:name])
     @cource = Cource.find(params[:id])
     

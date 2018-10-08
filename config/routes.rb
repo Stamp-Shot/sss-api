@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post '/spots', to:'spots#create'
 
   get '/cources', to:'cources#index'
-  get '/cources/:id', to:'cources#show'
+  get '/cources/id', to:'cources#show'
   post '/cources', to:'cources#create'
 
   get '/users/all', to:'users#index'
