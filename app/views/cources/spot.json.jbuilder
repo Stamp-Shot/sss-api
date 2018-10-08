@@ -1,0 +1,1 @@
+json.array! @cource.spot, :name, :GPS_X, :GPS_Y
