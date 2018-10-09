@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
 
   get '/spots', to:'spots#index'
-  get '/spots/:id', to:'spots#show'
+  get '/spots/:id/:name', to:'spots#show'
   post '/spots', to:'spots#create'
 
   get '/cources', to:'cources#index'
   get '/cources/:id', to:'cources#show'
-  get '/cources/spot/:name', to:'cources#search'
+  get '/cources/:text', to:'cources#search'
   post '/cources', to:'cources#create'
 
   get '/users/all', to:'users#index'

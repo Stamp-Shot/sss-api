@@ -16,7 +16,7 @@ class CourcesController < ApplicationController
   end
 
   def search
-    @cource = Cource.where name: params[:name]
+    @cource = Cource.where "name == ?",params[:name]
     #@cource = Cource.find_by(name: params[:name])
     #@cource = Cource.find(params[:id])
     

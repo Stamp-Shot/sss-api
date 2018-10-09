@@ -8,9 +8,10 @@ class SpotsController < ApplicationController
 
   #GET spots/:id
   def show
-    @spot=Spot.find(params[:id])
+    #@spot=Spot.find(params[:id])
+    @spot = Spot.where "cource_id == ? and name == ?",params[:id],params[:name]
 
-    render json: @spot
+    render 'show', formats: 'json', handlers: 'jbuilder'
   end
 
   def create
