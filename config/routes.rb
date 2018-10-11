@@ -13,7 +13,15 @@ Rails.application.routes.draw do
   get '/users/:id', to:'users#show'
   post '/users', to:'users#create'
 
+  get '/finishes', to:'finishes#index'
+  get '/finishes/:id', to:'finishes#show'
+  post '/finishes', to:'finishes#create'
 
+  get '/exchanges', to:'exchanges#index'
+  get '/exchanges/:id', to:'exchanges#show'
+  post '/exchanges', to:'exchanges#create'
+
+  get 'images/:id', to:'images#show'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
