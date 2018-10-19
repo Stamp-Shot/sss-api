@@ -27,6 +27,6 @@ class SpotsController < ApplicationController
   private
   # Only allow a trusted parameter "white list" through.
   def spot_params
-    params.fetch(:spot, {}).permit(:cource_id, :name, :GPS_X, :GPS_Y, :image)
+    params.require(:spot).permit(:cource_id, :name, :GPS_X, :GPS_Y, :image)
   end
 end

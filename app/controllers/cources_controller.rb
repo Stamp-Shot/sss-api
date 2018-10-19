@@ -26,6 +26,7 @@ class CourcesController < ApplicationController
   # POST /cources
   def create
     @cource = Cource.new(cource_params)
+  #  raise
 
     if @cource.save
       render json: @cource, status: :created, location: @cource_new
@@ -37,6 +38,7 @@ class CourcesController < ApplicationController
   private
   # Only allow a trusted parameter "white list" through.
   def cource_params
-    params.fetch(:cource, {}).permit(:name, :spot_num)
+    #params.fetch(:cource, {}).permit(:name, :spot_num)
+    params.require(:cource).permit(:name, :spot_num, spot_attributes: [:name, :GPS_X, :GPS_Y, :image])
   end
 end

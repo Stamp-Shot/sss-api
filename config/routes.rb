@@ -14,11 +14,11 @@ Rails.application.routes.draw do
   post '/users', to:'users#create'
 
   get '/finishes', to:'finishes#index'
-  get '/finishes/:id', to:'finishes#show'
+  get '/finishes/:user_id/:cource_id/:spot_id', to:'finishes#show'
   post '/finishes', to:'finishes#create'
 
   get '/exchanges', to:'exchanges#index'
-  get '/exchanges/:id', to:'exchanges#show'
+  get '/exchanges/:user_id/:cource_id', to:'exchanges#show'
   post '/exchanges', to:'exchanges#create'
 
   get 'images/:id', to:'images#show'
