@@ -26,7 +26,7 @@ class ExchangesController < ApplicationController
   
     private
     # Only allow a trusted parameter "white list" through.
-    def cource_params
-      params.fetch(:exchane, {}).permit(:user_id, :cource_id, :QR)
+    def exchange_params
+      params.fetch(:exchange, {}).permit(:user_id, :course_id, :QR)
     end
   end

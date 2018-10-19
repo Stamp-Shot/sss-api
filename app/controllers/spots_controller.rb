@@ -9,7 +9,7 @@ class SpotsController < ApplicationController
   #GET spots/:id
   def show
     #@spot=Spot.find(params[:id])
-    @spot = Spot.where "cource_id == ? and name == ?",params[:id],params[:name]
+    @spot = Spot.where "course_id == ? and name == ?",params[:id],params[:name]
 
     render 'show', formats: 'json', handlers: 'jbuilder'
   end
@@ -27,6 +27,6 @@ class SpotsController < ApplicationController
   private
   # Only allow a trusted parameter "white list" through.
   def spot_params
-    params.require(:spot).permit(:cource_id, :name, :GPS_X, :GPS_Y, :image)
+    params.require(:spot).permit(:course_id, :name, :GPS_X, :GPS_Y, :image)
   end
 end

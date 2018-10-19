@@ -2,8 +2,8 @@
 
 one:
   name: MyString
-  spot_num: 1
+  spot_count: 1
 
 two:
   name: MyString
-  spot_num: 1
+  spot_count: 1

@@ -1,0 +1,1 @@
+json.array! @courses, :name,:spot_count

@@ -1,5 +1,5 @@
 class Spot < ApplicationRecord
-    belongs_to :cource, inverse_of: :spot ,optional: true
+    belongs_to :course, inverse_of: :spot ,optional: true
 
 
     #validates :name, presence: true

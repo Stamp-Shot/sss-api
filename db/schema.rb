@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_13_043146) do
+ActiveRecord::Schema.define(version: 2018_10_19_161804) do
 
-  create_table "cources", force: :cascade do |t|
+  create_table "courses", force: :cascade do |t|
     t.string "name"
-    t.integer "spot_num"
+    t.integer "spot_count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -36,10 +36,11 @@ ActiveRecord::Schema.define(version: 2018_09_13_043146) do
   end
 
   create_table "spots", force: :cascade do |t|
-    t.integer "cource_id"
+    t.integer "course_id"
     t.string "name"
     t.float "GPS_X"
     t.float "GPS_Y"
+    t.text "comment"
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
