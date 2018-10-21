@@ -1,5 +1,6 @@
 class Spot < ApplicationRecord
-    belongs_to :course, inverse_of: :spot ,optional: true
+    mount_uploader　:image, SpotImageUploader
+    belongs_to :course ,optional: true
 
 
     #validates :name, presence: true

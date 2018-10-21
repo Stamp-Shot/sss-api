@@ -24,6 +24,13 @@ class SpotsController < ApplicationController
     end
   end
 
+  def imageup
+    spot = Spot.find(params[:id])
+    spot.data = request.raw_post
+    image.save!
+    render json: spot, expect: [:data]
+  end
+
   private
   # Only allow a trusted parameter "white list" through.
   def spot_params

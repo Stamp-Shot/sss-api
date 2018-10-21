@@ -3,10 +3,11 @@ Rails.application.routes.draw do
   get '/spots', to:'spots#index'
   get '/spots/:id/:name', to:'spots#show'
   post '/spots', to:'spots#create'
+  #put '/spots/:id/upload', to:'spots#imageup'
 
   get '/courses', to:'courses#index'
   get '/courses/:id', to:'courses#show'
-  get '/courses/:text', to:'courses#search'
+  get '/courses/:id/:text', to:'courses#search'
   post '/courses', to:'courses#create'
 
   get '/users/all', to:'users#index'
