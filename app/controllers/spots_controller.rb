@@ -27,8 +27,13 @@ class SpotsController < ApplicationController
   def imageup
     spot = Spot.find(params[:id])
     spot.data = request.raw_post
-    image.save!
+    spot.save!
     render json: spot, expect: [:data]
+  end
+
+  def download
+    spot = Spot.find(params[:id])
+    send_data spot.data, type: "image/png", disposition: 'inline'
   end
 
   private

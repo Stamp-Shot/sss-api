@@ -1,1 +1,1 @@
-json.array! @courses, :name,:spot_count
+json.array! @courses, :id,:name,:spot_count

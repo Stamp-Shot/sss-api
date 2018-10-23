@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_20_073933) do
+ActiveRecord::Schema.define(version: 2018_10_23_135750) do
 
   create_table "courses", force: :cascade do |t|
     t.string "name"
@@ -21,22 +21,21 @@ ActiveRecord::Schema.define(version: 2018_10_20_073933) do
 
   create_table "exchanges", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "cource_id"
     t.string "QR"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "course_id"
   end
 
   create_table "finishes", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "cource_id"
     t.integer "spot_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "course_id"
   end
 
   create_table "prizes", force: :cascade do |t|
-    t.integer "cource_id"
     t.string "name"
     t.text "location"
     t.text "description"
@@ -44,6 +43,7 @@ ActiveRecord::Schema.define(version: 2018_10_20_073933) do
     t.binary "data"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "course_id"
   end
 
   create_table "spots", force: :cascade do |t|
@@ -52,10 +52,9 @@ ActiveRecord::Schema.define(version: 2018_10_20_073933) do
     t.float "GPS_X"
     t.float "GPS_Y"
     t.text "comment"
-    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.binary "data"
+    t.string "image_id"
   end
 
   create_table "users", force: :cascade do |t|

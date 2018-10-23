@@ -8,7 +8,7 @@ class FinishesController < ApplicationController
   
     # GET /finishes/:user_id/:cource_id/spot_id
     def show
-      @finish = Finish.where "user_id == ? and cource_id == ? and spot_id == ?",params[:user_id],params[:cource_id],params[:spot_id]
+      @finish = Finish.where "user_id == ? and course_id == ? and spot_id == ?",params[:user_id],params[:course_id],params[:spot_id]
       if @finish != []
         render :json => {'result' => 'true'}
       else
@@ -30,6 +30,6 @@ class FinishesController < ApplicationController
     private
     # Only allow a trusted parameter "white list" through.
     def finish_params
-      params.fetch(:finish, {}).permit(:user_id, :cource_id, :spot_id)
+      params.fetch(:finish, {}).permit(:user_id, :course_id, :spot_id)
     end
   end

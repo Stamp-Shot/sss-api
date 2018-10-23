@@ -1,1 +1,1 @@
-#json.array! @finish.spot, :name, :GPS_X, :GPS_Y
+json.array! @finishes, :user_id, :course_id, :spot_id

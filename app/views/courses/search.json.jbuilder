@@ -1,1 +1,1 @@
-json.array! @course, :name, :GPS_X, :GPS_Y
+json.array! @course, :id, :name, :GPS_X, :GPS_Y
