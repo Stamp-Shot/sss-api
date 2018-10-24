@@ -1,6 +1,4 @@
 class Spot < ApplicationRecord
-    #mount_uploaders　:image, SpotImageUploader
-    attachment :image
     belongs_to :course ,optional: true
 
     #validates :name, presence: true

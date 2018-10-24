@@ -3,11 +3,10 @@ Rails.application.routes.draw do
   get '/spots', to:'spots#index'
   get '/spots/:id/:name', to:'spots#show'
   post '/spots', to:'spots#create'
-  #get  '/spots/:id/dounload', to:'spots#download'
-  #put '/spots/:id/upload', to:'spots#imageup'
 
   get '/courses', to:'courses#index'
   get '/courses/count/:id', to:'courses#count'
+  get '/courses/count', to:'courses#num'
   get '/courses/:id', to:'courses#show'
   get '/courses/:id/:text', to:'courses#search'
   post '/courses', to:'courses#create'
