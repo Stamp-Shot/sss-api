@@ -1,40 +1,32 @@
 class PrizesController < ApplicationController
-    #GET spots
+    #GET prizes
     def index
-      @spots = Spot.all
+      @prizes = Prize.all
   
-      render json: @spots
+      render json: @prizes
     end
   
-    #GET spots/:id
+    #GET prizes/:id
     def show
-      #@spot=Spot.find(params[:id])
-      @spot = Spot.where "course_id == ? and name == ?",params[:id],params[:name]
+      @prize = Prize.where "course_id == ? and name == ?",params[:id],params[:name]
 
       render 'show', formats: 'json', handlers: 'jbuilder'
     end
   
     def create
-      @spot = Spot.new(spot_params)
+      @prize = Prize.new(prize_params)
   
-      if @spot.save
-        render json: @spot, status: :created, location: @spot_new
+      if @prize.save
+        render json: @prize, status: :created, location: @prize_new
       else
-        render json: @spot.errors, status: :unprocessable_entity
+        render json: @prize.errors, status: :unprocessable_entity
       end
-    end
-  
-    def imageup
-      spot = Spot.find(params[:id])
-      spot.data = request.raw_post
-      image.save!
-      render json: spot, expect: [:data]
     end
   
     private
     # Only allow a trusted parameter "white list" through.
-    def spot_params
-      params.require(:spot).permit(:course_id, :name, :GPS_X, :GPS_Y, :image)
+    def prize_params
+      params.require(:prize).permit(:course_id, :name, :location, :description)
     end
   end
   

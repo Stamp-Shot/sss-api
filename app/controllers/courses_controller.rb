@@ -32,10 +32,15 @@ class CoursesController < ApplicationController
     render 'num', formats: 'json', handlers: 'jbuilder'
   end
 
+  def prizeinfo
+    @course = Course.find(params[:id]).prize
+    
+    render 'prizeinfo', formats: 'json', handlers: 'jbuilder'
+  end
+
   # POST /courses
   def create
     @course = Course.new(course_params)
-  #  raise
 
     if @course.save
       render json: @course, status: :created, location: @course_new
